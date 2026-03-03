@@ -11,7 +11,7 @@ export function HeroBanner() {
     <section className="relative w-full overflow-hidden" style={{ minHeight: 'clamp(220px, 38vw, 560px)' }}>
       {/* Background image */}
       <Image
-        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/hero-banner.png`}
+        src="/clawmachinegames/public/hero-banner.png"
         alt="Clay Machine Games — forge meets factory"
         fill
         priority
