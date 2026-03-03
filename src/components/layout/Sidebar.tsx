@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { SidebarOverlay } from './SidebarOverlay';
 
 const navItems = [
@@ -15,6 +16,7 @@ const navItems = [
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -62,55 +64,59 @@ export function Sidebar() {
 
         {/* Nav items */}
         <nav className="flex flex-col flex-1 overflow-hidden py-2">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="
-                group flex items-center gap-3 h-11 px-3
-                text-secondary-200 hover:text-accent-ember
-                hover:bg-white/5
-                transition-colors duration-150
-                relative overflow-hidden
-              "
-            >
-              {/* Ember left-border indicator on hover */}
-              <span
-                className="
-                  absolute left-0 top-2 bottom-2 w-0.5
-                  bg-accent-ember rounded-r
-                  opacity-0 group-hover:opacity-100
-                  transition-opacity duration-150
-                "
-                aria-hidden
-              />
-
-              {/* Icon — always visible */}
-              <span
-                className="
-                  shrink-0 w-6 text-center
-                  font-display text-lg leading-none
-                  text-accent-ember group-hover:animate-rune-pulse
-                "
-                aria-hidden
-              >
-                {item.icon}
-              </span>
-
-              {/* Label — only visible when open */}
-              <span
+          {navItems.map((item) => {
+            const isActive = pathname === item.href ||
+              (item.href !== '/' && pathname.startsWith(item.href));
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
                 className={`
-                  font-display font-semibold uppercase tracking-widest text-sm
-                  whitespace-nowrap
-                  transition-all duration-300
-                  ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 pointer-events-none'}
+                  group flex items-center gap-3 h-11 px-3
+                  hover:bg-white/5
+                  transition-colors duration-150
+                  relative overflow-hidden
+                  ${isActive ? 'text-white' : 'text-secondary-200 hover:text-accent-ember'}
                 `}
               >
-                {item.label}
-              </span>
-            </Link>
-          ))}
+                {/* Ember left-border indicator — always visible when active */}
+                <span
+                  className={`
+                    absolute left-0 top-2 bottom-2 w-0.5
+                    bg-accent-ember rounded-r
+                    transition-opacity duration-150
+                    ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
+                  `}
+                  aria-hidden
+                />
+
+                {/* Icon — always visible */}
+                <span
+                  className={`
+                    shrink-0 w-6 text-center
+                    font-display text-lg leading-none
+                    ${isActive ? 'text-accent-gold animate-rune-pulse' : 'text-accent-ember group-hover:animate-rune-pulse'}
+                  `}
+                  aria-hidden
+                >
+                  {item.icon}
+                </span>
+
+                {/* Label — only visible when open */}
+                <span
+                  className={`
+                    font-display font-semibold uppercase tracking-widest text-sm
+                    whitespace-nowrap
+                    transition-all duration-300
+                    ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 pointer-events-none'}
+                  `}
+                >
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Bottom brand mark */}

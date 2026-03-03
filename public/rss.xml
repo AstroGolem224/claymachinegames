@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clay Machine Games</title>
+    <link>https://clay-machine-games.vercel.app/</link>
+    <description>Articles on game development, engineering, lore and community from Clay Machine Games.</description>
+    <language>de</language>
+    <atom:link href="https://clay-machine-games.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Von Null zum Solo-Dev: Stufen, die niemand dir erklärt</title>
+      <link>https://clay-machine-games.vercel.app/articles/solo-dev-stages</link>
+      <description>Coding verlernt, keine Erfahrung — und trotzdem kurz vor dem ersten Game-Release. Wie KI-Agenten und ein MVP das möglich gemacht haben.</description>
+      <category>Dev Journal</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/solo-dev-stages</guid>
+    </item>
+
+    <item>
+      <title>The Art of the Claw: Mechanism Deep Dive</title>
+      <link>https://clay-machine-games.vercel.app/articles/art-of-the-claw</link>
+      <description>From pneumatic actuators to torque-calibrated grippers — we dissect what separates a winning machine from a decorative one.</description>
+      <category>Engineering</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/art-of-the-claw</guid>
+    </item>
+
+    <item>
+      <title>Ancient Golem Figurines: Origins Uncovered</title>
+      <link>https://clay-machine-games.vercel.app/articles/golem-origins</link>
+      <description>The clay warriors predate the machine age by millennia. A deep look at the mythology behind our mascot and the art that inspired it.</description>
+      <category>Lore &amp; Art</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/golem-origins</guid>
+    </item>
+
+    <item>
+      <title>Strategy Guide: Maximum Win Rate</title>
+      <link>https://clay-machine-games.vercel.app/articles/strategy-guide</link>
+      <description>Position, timing, claw tension — a data-driven breakdown of the variables that lead to consistent prize grabs.</description>
+      <category>Strategy</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/strategy-guide</guid>
+    </item>
+
+    <item>
+      <title>Collector's Corner: Rarest Prizes of 2025</title>
+      <link>https://clay-machine-games.vercel.app/articles/collectors-corner-2025</link>
+      <description>Limited-run collectibles, blind-box rarities, and the machines that hold them. Our curators rank this year's top finds.</description>
+      <category>Collecting</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/collectors-corner-2025</guid>
+    </item>
+
+    <item>
+      <title>Machine Mods: Community Builds</title>
+      <link>https://clay-machine-games.vercel.app/articles/community-builds</link>
+      <description>DIY arcade engineers share their wildest custom claw builds — forged steel arms, rune-etched cabinets, and clay-cast prizes.</description>
+      <category>Community</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/community-builds</guid>
+    </item>
+
+    <item>
+      <title>The Steel Side: Robotics Meets Arcade</title>
+      <link>https://clay-machine-games.vercel.app/articles/robotics-meets-arcade</link>
+      <description>Industrial robotic arms share more with claw machines than you'd think. We explore the surprisingly narrow gap between factory floor and fun.</description>
+      <category>Technology</category>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clay-machine-games.vercel.app/articles/robotics-meets-arcade</guid>
+    </item>
+  </channel>
+</rss>
