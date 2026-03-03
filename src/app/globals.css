@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Primary palette (stone / clay) ── */
+  --color-primary-50:  #f5f0eb;
+  --color-primary-100: #e8ddd0;
+  --color-primary-200: #d4bfa3;
+  --color-primary-300: #b89876;
+  --color-primary-400: #9a7355;
+  --color-primary-500: #7d5a3c;
+  --color-primary-600: #614328;
+  --color-primary-700: #4a3019;
+  --color-primary-800: #33200e;
+  --color-primary-900: #1e1208;
+  --color-primary-950: #0f0904;
+
+  /* ── Secondary palette (steel / slate) ── */
+  --color-secondary-50:  #f0f4f8;
+  --color-secondary-100: #dce8f0;
+  --color-secondary-200: #c8d6e5;
+  --color-secondary-300: #a8c0d5;
+  --color-secondary-400: #8aa6be;
+  --color-secondary-500: #6a8aa8;
+  --color-secondary-600: #4a6b85;
+  --color-secondary-700: #315468;
+  --color-secondary-800: #1e3347;
+  --color-secondary-900: #111e2b;
+  --color-secondary-950: #080d13;
+
+  /* ── Accent colors ── */
+  --color-accent-ember: #d4520a;
+  --color-accent-gold:  #c9972a;
+  --color-accent-cyan:  #0de8f5;
+  --color-rune-glow:    #ff7b2e;
+
+  /* ── Bridge / depth tones ── */
+  --color-clay-mid:    #5c3d1e;
+  --color-rust-shadow: #3d1a08;
+  --color-steel-mid:   #2a3f52;
+  --color-smog:        #1a2028;
+
+  /* ── Gradients ── */
+  --background-image-grad-hero:
+    linear-gradient(to right, #0c1214 0%, #121a1e 25%, #0a1620 75%, #060c10 100%);
+  --background-image-grad-surface-card:
+    linear-gradient(135deg, #131a20 0%, #0c1c2c 100%);
+  --background-image-grad-ember-glow:
+    radial-gradient(ellipse at 40% 60%, rgba(212, 82, 10, 0.25) 0%, transparent 70%);
+  --background-image-grad-cyan-glow:
+    radial-gradient(ellipse at 70% 40%, rgba(13, 232, 245, 0.15) 0%, transparent 70%);
+
+  /* ── Typography ── */
+  --font-display: var(--font-barlow), "Barlow Condensed", sans-serif;
+  --font-body:    var(--font-inter), "Inter", sans-serif;
+
+  /* ── Animations ── */
+  --animate-rune-pulse:    rune-pulse 3s ease-in-out infinite;
+  --animate-hero-entrance: hero-entrance 1s ease-out forwards;
+  --animate-ember-shimmer: ember-shimmer 1.5s linear infinite;
+}
+
+/* ── Keyframes ── */
+@keyframes rune-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px #ff7b2e); opacity: 0.8; }
+  50%       { filter: drop-shadow(0 0 14px #ff7b2e) brightness(1.2); opacity: 1; }
+}
+
+@keyframes hero-entrance {
+  0%   { opacity: 0; transform: scale(0.97) translateY(14px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes ember-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ── CSS Custom Properties (dark / light mode via next-themes class strategy) ── */
+:root {
+  --bg-base:     #0c1214;
+  --bg-surface:  #141b20;
+  --text-hi:     #daeaea;
+  --text-lo:     #5e7a7a;
+  --border-warm: #263840;
+  --border-cool: #1a3248;
+}
+
+/* ── Warm Brown mode ── */
+.light {
+  --bg-base:     #1a0e06;
+  --bg-surface:  #241308;
+  --text-hi:     #e8ddd0;
+  --text-lo:     #9a7355;
+  --border-warm: #5c3d1e;
+  --border-cool: #2a3f52;
+  --background-image-grad-hero:
+    linear-gradient(to right, #1e1208 0%, #33200e 25%, #111e2b 75%, #080d13 100%);
+  --background-image-grad-surface-card:
+    linear-gradient(135deg, #33200e 0%, #1e3347 100%);
+}
+
+/* ── Base styles ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-hi);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Utility: decorative gold rule ── */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9972a 30%, #c9972a 70%, transparent);
+}
+
+/* ── Sidebar: rough stone texture ── */
+.sidebar-stone {
+  background-color: rgba(27, 32, 38, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 12% 18%,  rgba(82, 92, 98, 0.30) 0%, transparent 52%),
+    radial-gradient(ellipse 65% 85% at 88% 82%,  rgba(18, 26, 32, 0.58) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 42% at 58% 38%,  rgba(58, 68, 74, 0.20) 0%, transparent 44%),
+    radial-gradient(circle         at  8% 88%,   rgba(36, 46, 54, 0.42) 0%, transparent 28%),
+    radial-gradient(ellipse 130% 22% at 50%  0%, rgba(13,232,245, 0.055) 0%, transparent 65%),
+    repeating-linear-gradient(
+      -67deg,
+      transparent 0px, transparent 13px,
+      rgba(0, 0, 0, 0.055) 13px, rgba(0, 0, 0, 0.055) 14px
+    ),
+    repeating-linear-gradient(
+      27deg,
+      transparent 0px, transparent 19px,
+      rgba(255, 255, 255, 0.016) 19px, rgba(255, 255, 255, 0.016) 20px
+    );
+  border-right: 1px solid rgba(13, 232, 245, 0.18);
+}
