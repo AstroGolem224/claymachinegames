@@ -8,6 +8,13 @@ import { EmberButton } from '@/components/ui/EmberButton';
 /* ── Placeholder article data ── */
 const featuredArticles: ArticleCardProps[] = [
   {
+    title: 'Von Null zum Solo-Dev: Stufen, die niemand dir erklärt',
+    excerpt:
+      'Coding verlernt, keine Erfahrung — und trotzdem kurz vor dem ersten Game-Release. Wie KI-Agenten und ein MVP das möglich gemacht haben.',
+    category: 'Dev Journal',
+    href: '/articles/solo-dev-stages',
+  },
+  {
     title: 'The Art of the Claw: Mechanism Deep Dive',
     excerpt:
       'From pneumatic actuators to torque-calibrated grippers — we dissect what separates a winning machine from a decorative one.',
