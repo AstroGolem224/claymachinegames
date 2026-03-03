@@ -49,7 +49,14 @@ export function ArticleCard({
   href,
 }: ArticleCardProps) {
   const [imgError, setImgError] = useState(false);
-  const showImage = !!imageSrc && !imgError;
+
+  // Prepend basePath to local paths (starting with '/') so static exports
+  // on GitHub Pages resolve correctly. External URLs are left untouched.
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+  const resolvedSrc =
+    imageSrc && imageSrc.startsWith('/') ? `${basePath}${imageSrc}` : imageSrc;
+
+  const showImage = !!resolvedSrc && !imgError;
 
   return (
     <article className="
@@ -65,7 +72,7 @@ export function ArticleCard({
       <div className="relative w-full aspect-video overflow-hidden bg-primary-800">
         {showImage ? (
           <Image
-            src={imageSrc}
+            src={resolvedSrc!}
             alt={imageAlt ?? title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
