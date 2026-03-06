@@ -49,6 +49,26 @@ export default function HomePage() {
           </EmberButton>
         </div>
 
+        {/* ── Asset Generator Highlight ── */}
+        <div className="mt-16 rounded-lg p-8 border border-accent-gold/40 border-l-4 border-l-accent-gold bg-zinc-900/80 backdrop-blur-sm relative overflow-hidden">
+          <div className="absolute inset-0 bg-grad-ember-glow opacity-30 pointer-events-none" aria-hidden />
+          <div className="relative z-10 flex flex-col items-start">
+            <span className="font-display font-semibold uppercase tracking-[0.35em] text-xs text-accent-gold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent-gold animate-pulse" />
+              New Tool Available
+            </span>
+            <h3 className="font-display font-extrabold uppercase text-3xl sm:text-4xl text-white mt-2 mb-3 leading-tight tracking-wide">
+              Nano Banana Asset Generator
+            </h3>
+            <p className="text-secondary-100/80 text-sm leading-relaxed mb-6 max-w-2xl">
+              Create stunning 2D game assets, isometric props, and concept art in seconds using our highly optimized AI generator powered by NVIDIA Mistral and Stable Diffusion 3. Operates flawlessly directly in your browser.
+            </p>
+            <EmberButton href="https://astrogolem224.github.io/cmg_Asset_Generator/" size="md">
+              Launch Web App
+            </EmberButton>
+          </div>
+        </div>
+
         {/* ── Dual-world section ── */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Warm / Clay side */}

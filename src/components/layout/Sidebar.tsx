@@ -6,12 +6,13 @@ import { usePathname } from 'next/navigation';
 import { SidebarOverlay } from './SidebarOverlay';
 
 const navItems = [
-  { label: 'Home',       href: '/',          icon: '⬡' },
-  { label: 'Games',      href: '/games',     icon: '◈' },
-  { label: 'Articles',   href: '/articles',  icon: '◉' },
-  { label: 'Gallery',    href: '/gallery',   icon: '◎' },
+  { label: 'Home', href: '/', icon: '⬡' },
+  { label: 'Games', href: '/games', icon: '◈' },
+  { label: 'Asset Gen', href: 'https://astrogolem224.github.io/cmg_Asset_Generator/', icon: '⚒' },
+  { label: 'Articles', href: '/articles', icon: '◉' },
+  { label: 'Gallery', href: '/gallery', icon: '◎' },
   { label: 'Leaderboard', href: '/leaderboard', icon: '◆' },
-  { label: 'About',      href: '/about',     icon: '◐' },
+  { label: 'About', href: '/about', icon: '◐' },
 ];
 
 export function Sidebar() {
