@@ -8,7 +8,6 @@ import { SidebarOverlay } from './SidebarOverlay';
 const navItems = [
   { label: 'Home', href: '/', icon: '⬡' },
   { label: 'Games', href: '/games', icon: '◈' },
-  { label: 'Asset Gen', href: 'https://astrogolem224.github.io/cmg_Asset_Generator/', icon: '⚒' },
   { label: 'Articles', href: '/articles', icon: '◉' },
   { label: 'Gallery', href: '/gallery', icon: '◎' },
   { label: 'Leaderboard', href: '/leaderboard', icon: '◆' },
